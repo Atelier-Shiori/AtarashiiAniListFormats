@@ -13,6 +13,7 @@ query ($id : Int!, $listType: MediaType, $page: Int) {
         medium
       }}
     	type: media{format}
+      status: media{status}
       score: score(format: POINT_100)
       watched_episodes: progress
       rewatch_count: repeat
