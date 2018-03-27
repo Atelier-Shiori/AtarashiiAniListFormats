@@ -1,5 +1,5 @@
-query ($id : Int!, $listType: MediaType) {
-  AnimeList: Page {
+query ($id : Int!, $listType: MediaType, $page: Int) {
+  AnimeList: Page (page: $page) {
     mediaList(userId: $id, type: $listType) {
       id :media{id}
       entryid: id
