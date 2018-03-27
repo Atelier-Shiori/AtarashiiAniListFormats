@@ -1,0 +1,6 @@
+query ($id: Int!, $type: MediaType) {
+  Media(idMal: $id, type: $type) {
+    id
+    idMal
+  }
+}
