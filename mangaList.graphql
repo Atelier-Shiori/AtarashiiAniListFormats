@@ -1,0 +1,43 @@
+query ($id : Int!, $page: Int) {
+  MangaList: Page (page: $page) {
+    mediaList(userId: $id, type: MANGA) {
+      id :media{id}
+      entryid: id
+      title: media {title {
+        title: userPreferred
+      }}
+      chapters: media{chapters}
+      volumes: media{volumes}
+      image_url: media{coverImage {
+        large
+        medium
+      }}
+      type: media{format}
+      status: media{status}
+      score: score(format: POINT_100)
+      read_chapters: progress
+      read_volumes: progressVolumes
+      read_status: status
+      reread_count: repeat
+      private
+      notes
+      read_start: startedAt {
+        year
+        month
+        day
+      }
+      read_end: completedAt {
+        year
+        month
+        day
+      }
+    }
+		pageInfo {
+      total
+      currentPage
+      lastPage
+      hasNextPage
+      perPage
+    }
+  }
+}
