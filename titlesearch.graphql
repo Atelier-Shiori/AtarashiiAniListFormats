@@ -1,0 +1,22 @@
+query ($query: String, $type: MediaType) {
+  Page {
+    media(search: $query, type: $type) {
+      id
+      title {
+				userPreferred
+        romaji
+      }
+      coverImage {
+        medium
+        large
+      }
+      format
+      type
+      status
+      episodes
+      chapters
+      volumes
+      isAdult
+    }
+  }
+}
