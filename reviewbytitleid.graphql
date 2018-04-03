@@ -1,23 +1,26 @@
-{
-  "data": {
-    "Page": {
-      "reviews": [
-        {
-          "id": 2369,
-          "body": "<p>Um dos, se não O, shõnen mais bem trabalhado dessa geração. A autora em nenhum momento subestima a inteligencia dos espectadores, a trama vai do micro para o macro de uma maneira muito natural e coerente, tudo já estava muito bem preparado por ela desde o incio, ela subverte diversas expectativas e cria varias situações interessantes e inesperadas dentro do gênero de 'anime de porrada'.<br />\nUm dos pontos que mais favorecem a grandiosidade do anime em termo de popularidade e qualidade são seus personagens cativantes e memoráveis, desde os personagens principais como Ed e o Al que você acompanha o sofrimento (muito bem explorado) de perder seus corpos e todos os ecos que aquela experiencia traumática teve em suas vidas e personalidades até aqueles personagens de suporte que aparecem em poucos episódios todos são bem trabalhados tornando-os mais memoráveis que diversos protagonistas genéricos existentes em tantos animes por ai. Arakawa cuida para que cada personagem tenha seu desenvolvimento e para que o publico não consiga ser indiferente a ele (e as vezes quebre nossa cara pouco tempo depois).<br />\nOutro fato encantador de FMA é o seu ritmo que consegue ser frenético e por vezes calmo, sempre nos estimulando a querer saber mais e descobrir <strong><em>tudo</em></strong> que esta por trás dos acontecimentos da trama regulando o nível de intensidade de uma maneira muito cautelosa criando momentos de quebra de tensão mas nunca tornando algum episodio desnecessário.<br />\nAlém de tudo isso vale destacar é na coragem da obra de abordar temas adultos mesmo voltado para um publico jovem ela não teme em abordar temas como militarismo, fascismo, guerra, preconceito racial, corrupção, discussões filosóficas e fazer referencia a cabala.<br />\nPONTO BÔNUS: Nenhuma das personagens femininas é hipersexualizada ou diminuída em momento algum, todas elas tem pontos e momentos de destaque no anime.</p>",
-          "rating": 7,
-          "ratingAmount": 20,
-          "createdAt": 1517362318,
-          "updatedAt": 1519849956,
-          "user": {
-            "id": 112752,
-            "name": "Garboasaboy",
-            "avatar": {
-              "large": "https://cdn.anilist.co/img/dir/user/reg/112752-fknqXqDfq9xR.jpg"
-            }
-          }
+query ($id: Int!, $page: Int) {
+  Page (page: $page) {
+    reviews (mediaId: $id){
+      id
+      body(asHtml: true)
+      rating
+      ratingAmount
+      createdAt
+      updatedAt
+      user {
+        id
+        name
+        avatar {
+          large
         }
-      ]
+      }
+    }
+    	pageInfo {
+      total
+      currentPage
+      lastPage
+      hasNextPage
+      perPage
     }
   }
 }
