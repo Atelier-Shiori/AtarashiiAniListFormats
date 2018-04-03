@@ -1,0 +1,24 @@
+query ($id: Int!, $page: Int = 1) {
+  Media(id: $id, type: ANIME) {
+    id
+    staff(page: $page, sort:[ROLE]) {
+       pageInfo {
+        total
+        perPage
+        hasNextPage
+        currentPage
+        lastPage
+      }
+      staff:edges {
+        person:node {
+          id
+          name {
+            first
+            last
+            native
+          }
+        }
+      }
+    }
+  }
+}
