@@ -4,6 +4,7 @@ query ($query: String, $type: MediaType) {
       id
       title {
         userPreferred
+        english
         romaji
       }
       coverImage {
