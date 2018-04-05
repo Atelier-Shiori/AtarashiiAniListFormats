@@ -1,9 +1,9 @@
 query ($query: String, $type: MediaType) {
-  Page {
+  Page(perPage: 50) {
     media(search: $query, type: $type) {
       id
       title {
-				userPreferred
+        userPreferred
         romaji
       }
       coverImage {
@@ -20,3 +20,4 @@ query ($query: String, $type: MediaType) {
     }
   }
 }
+
