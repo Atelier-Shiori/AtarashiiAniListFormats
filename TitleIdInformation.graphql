@@ -26,6 +26,7 @@ query ($id: Int!, $type: MediaType) {
     type
     status
     episodes
+    duration
     chapters
     volumes
     description
