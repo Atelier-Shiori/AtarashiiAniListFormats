@@ -1,0 +1,51 @@
+query ($id: Int!) {
+  Staff(id: $id) {
+    id
+    name {
+      first
+      last
+      native
+    }
+    image {
+      large
+      medium
+    }
+    description
+    language
+    staffMedia(page: 1, sort: [START_DATE_DESC]) {
+      edges {
+        id
+        node {
+          title {
+            romaji
+          }
+          coverImage {
+            large
+          }
+        }
+        staffRole
+      }
+    }
+    characters(sort: [ROLE_DESC]) {
+      edges {
+        id
+        node {
+          name {
+            first
+            last
+          }
+          image {
+            large
+          }
+        }
+        role
+        media {
+          id
+          title {
+            romaji
+          }
+        }
+      }
+    }
+  }
+}
