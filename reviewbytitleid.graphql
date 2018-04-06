@@ -5,6 +5,7 @@ query ($id: Int!, $page: Int) {
       body(asHtml: true)
       rating
       ratingAmount
+      score
       createdAt
       updatedAt
       user {
