@@ -4,6 +4,6 @@ mutation ($mediaid : Int, $progress : Int, $progressVolumes : Int,  $status : Me
     progress
     progressVolumes
     status
-    score: score(format: POINT_100)
+    score(format: POINT_100)
   }
 }
