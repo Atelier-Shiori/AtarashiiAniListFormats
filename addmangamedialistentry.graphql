@@ -1,9 +1,9 @@
-mutation ($mediaid : Int, $progress : Int, $progressVolumes : Int,  $status : MediaListStatus, $score : Float) {
-	SaveMediaListEntry(mediaId: $mediaid, progress: $progress, progressVolumes: $progressVolumes,status: $status, score: $score) {
+mutation ($mediaid : Int, $progress : Int, $progressVolumes : Int,  $status : MediaListStatus, $score : Int) {
+	SaveMediaListEntry(mediaId: $mediaid, progress: $progress, progressVolumes: $progressVolumes,status: $status, scoreRaw: $score) {
   	id
     progress
     progressVolumes
     status
-    score
+    scoreRaw
   }
 }
