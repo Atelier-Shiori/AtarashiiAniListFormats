@@ -1,5 +1,5 @@
 mutation ($id : Int, $progress : Int, $progressVolumes : Int,  $status : MediaListStatus, $score : Int) {
-	SaveMediaListEntry(id: $mediaid, progress: $progress, progressVolumes: $progressVolumes,status: $status, scoreRaw: $score) {
+	SaveMediaListEntry(id: $id, progress: $progress, progressVolumes: $progressVolumes,status: $status, scoreRaw: $score) {
   	id
     progress
     progressVolumes
