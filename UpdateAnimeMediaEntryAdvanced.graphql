@@ -1,10 +1,12 @@
 mutation ($id : Int, $progress : Int, $status : MediaListStatus, $score : Int, $notes : String, $private : Boolean) {
-	SaveMediaListEntry(id: $id, progress: $progress, status: $status, scoreRaw: $score, ) {
+	SaveMediaListEntry(id: $id, progress: $progress, status: $status, scoreRaw: $score, notes: $notes, private: $private) {
   	id
     progress
+    progressVolumes
     status
     score(format: POINT_100)
     notes
     private
   }
 }
+
