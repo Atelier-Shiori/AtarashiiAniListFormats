@@ -1,5 +1,5 @@
-mutation ($id : Int, $progress : Int, $status : MediaListStatus, $score : Int, $notes : String, $private : Boolean) {
-	SaveMediaListEntry(id: $id, progress: $progress, status: $status, scoreRaw: $score, notes: $notes, private: $private) {
+mutation ($id : Int, $progress : Int, $status : MediaListStatus, $score : Int, $notes : String, $private : Boolean, $startedAt : FuzzyDateInput, $completedAt : FuzzyDateInput) {
+	SaveMediaListEntry(id: $id, progress: $progress, status: $status, scoreRaw: $score, notes: $notes, private: $private, startedAt: $startedAt, completedAt: $completedAt) {
   	id
     progress
     progressVolumes
@@ -7,6 +7,15 @@ mutation ($id : Int, $progress : Int, $status : MediaListStatus, $score : Int, $
     score(format: POINT_100)
     notes
     private
+    startedAt {
+      year
+      month
+      day
+    }
+    completedAt {
+      year
+      month
+      day
+    }
   }
 }
-
