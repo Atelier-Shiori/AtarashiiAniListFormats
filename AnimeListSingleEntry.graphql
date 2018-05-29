@@ -1,0 +1,24 @@
+query ($id: Int!, $mediaid: Int) {
+	AnimeList: Page (page: 1) {
+    mediaList(userId: $id, type: ANIME, mediaId:$mediaid) {
+      entryid: id
+      score: score(format: POINT_100)
+      watched_episodes: progress
+      watched_status: status
+      rewatch_count: repeat
+      private
+      notes
+      watching_start: startedAt {
+        year
+        month
+        day
+      }
+      watching_end: completedAt {
+        year
+        month
+        day
+      }
+    }
+  }
+}
+
