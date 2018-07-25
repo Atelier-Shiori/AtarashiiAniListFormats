@@ -1,7 +1,7 @@
 query ($id : Int!, $page: Int) {
   AnimeList: Page (page: $page) {
     mediaList(userId: $id, type: ANIME) {
-      id :media{id}
+      id :media{id, idMal}
       entryid: id
       title: media {title {
         title: userPreferred
@@ -30,6 +30,7 @@ query ($id : Int!, $page: Int) {
         month
         day
       }
+      customLists(asArray:true)
     }
 		pageInfo {
       total
